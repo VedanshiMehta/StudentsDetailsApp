@@ -71,31 +71,38 @@ namespace StudentsDetailsApp
         }
 
         private void MyModify_Click(object sender, EventArgs e)
-        { 
-
-            int roll = int.Parse(myRollNo.Text);
-            mstudents = sDB.GetStudentsByRollNo(roll);
-
-
-            if (mstudents != null)
+        {
+            if (myRollNo.Text != string.Empty && myName.Text != string.Empty && myMarks.Text != string.Empty)
             {
-                mstudents.srollno = int.Parse(myRollNo.Text);
-                mstudents.sName = myName.Text;
-                mstudents.sMarks = int.Parse(myMarks.Text);
+                int roll = int.Parse(myRollNo.Text);
+                mstudents = sDB.GetStudentsByRollNo(roll);
 
-                var isupdated = sDB.ModifyStudent(mstudents);
-                if (isupdated == true)
+
+                if (mstudents != null)
                 {
-                    Toast.MakeText(this, "Data Updated Succesfully", ToastLength.Short).Show();
+                    mstudents.srollno = int.Parse(myRollNo.Text);
+                    mstudents.sName = myName.Text;
+                    mstudents.sMarks = int.Parse(myMarks.Text);
+
+                    var isupdated = sDB.ModifyStudent(mstudents);
+                    if (isupdated == true)
+                    {
+                        Toast.MakeText(this, "Data Updated Succesfully", ToastLength.Short).Show();
+                    }
+
+                    else
+                    {
+
+                        Toast.MakeText(this, "No action performed", ToastLength.Short).Show();
+
+                    }
+
                 }
+            }
+            else
+            {
 
-                else
-                {
-
-                    Toast.MakeText(this, "No action performed", ToastLength.Short).Show();
-
-                }
-
+                Toast.MakeText(this, "Enter details in particular given field", ToastLength.Short).Show();
             }
         }
 
@@ -124,20 +131,27 @@ namespace StudentsDetailsApp
 
         private void MyAddB_Click(object sender, EventArgs e)
         {
-            
-            mstudents.srollno = int.Parse(myRollNo.Text);
-            mstudents.sName = myName.Text;
-            mstudents.sMarks = int.Parse(myMarks.Text);
-
-            var isinserted = sDB.InstertStudent(mstudents);
-            if(isinserted == true)
+            if (myRollNo.Text != string.Empty && myName.Text != string.Empty && myMarks.Text != string.Empty)
             {
-                Toast.MakeText(this, "Data Inserted Succesfully", ToastLength.Short).Show();
+                mstudents.srollno = int.Parse(myRollNo.Text);
+                mstudents.sName = myName.Text;
+                mstudents.sMarks = int.Parse(myMarks.Text);
+
+                var isinserted = sDB.InstertStudent(mstudents);
+                if (isinserted == true)
+                {
+                    Toast.MakeText(this, "Data Inserted Succesfully", ToastLength.Short).Show();
+                }
+                else
+                {
+                    Toast.MakeText(this, "No action performed", ToastLength.Short).Show();
+
+                }
             }
             else
             {
-                Toast.MakeText(this, "No action performed", ToastLength.Short).Show();
 
+                Toast.MakeText(this, "Enter details in particular given field", ToastLength.Short).Show();
             }
         }
 
