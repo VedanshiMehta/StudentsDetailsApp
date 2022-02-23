@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#000000"
+    android:orientation="vertical">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Student Details"
+        android:textStyle="bold"
+        android:textColor="@color/my_gray"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"/>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="5"
+        android:padding="10dp">
+ 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll No:"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="left"
+            android:id="@+id/textView1"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Roll No"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:background="#ffffff"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/editText1"/>
+        <Space
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+    
+    
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+             android:layout_row="2"
+            android:layout_column="0"
+            android:layout_gravity="left"
+            android:id="@+id/textView2"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"
+            android:gravity="center"
+            android:background="#ffffff"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+             android:layout_row="2"
+            android:layout_column="1"
+             android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/editText2"/>
+
+    <Space
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marks:"
+            android:layout_gravity="left"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:id="@+id/textView3"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Marks"
+            android:imeOptions="actionNext"
+            android:gravity="center"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:background="#ffffff"
+            android:inputType="number"
+             android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/editText3"/>
+
+    
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:weightSum="2"
+        tools:ignore="MissingDimension">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/my_gray"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/buttonA"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:backgroundTint="@color/my_gray"
+            android:textColor="#ffffff"
+            android:text="Delete"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/buttonD"/>
+    </LinearLayout>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:weightSum="2"
+        tools:ignore="MissingDimension">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MODIFY"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+           android:backgroundTint="@color/my_gray"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/buttonM"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/my_gray"
+            android:textColor="#ffffff"
+            android:text="View"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/buttonV"/>
+    </LinearLayout>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:backgroundTint="@color/my_gray"
+            android:textColor="#ffffff"
+            android:text="View ALL"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:id="@+id/buttonVA"/>
+
+</LinearLayout>
